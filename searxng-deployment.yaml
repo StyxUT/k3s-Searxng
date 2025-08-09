@@ -27,6 +27,7 @@ spec:
       containers:
         - name: searxng
           image: docker.io/searxng/searxng:latest
+#          image: searxng/searxng:2025.6.12-0b877f1 
           ports:
           - containerPort: 8080
             name: http
@@ -38,7 +39,8 @@ spec:
             mountPath: /etc/searxng
             subPath: searxng/etc/searxng
         - name: redis
-          image: docker.io/valkey/valkey:8-alpine
+#          image: docker.io/valkey/valkey:8-alpine
+          image: docker.io/valkey/valkey:latest  
           command:
             - valkey-server
             - --save
